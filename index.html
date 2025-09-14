@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <title>Antarjaal – Earn & Learn</title>
+  <meta name="description" content="Antarjaal – Earn & Learn Platform. रोज़ाना छोटे-छोटे Task पूरे करें और Wallet में Reward पाएं। Video Watch, Like और Subscribe Tasks से कमाई शुरू करें। Telegram Group Join करें और Task पूरा करके पैसे कमाएँ। Free और Easy Platform!">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f9;
+      color: #333;
+      text-align: center;
+    }
+    header {
+      background: #4CAF50;
+      color: white;
+      padding: 15px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .card {
+      background: white;
+      max-width: 500px;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      margin-top: 10px;
+      background: #4CAF50;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background: #45a049;
+    }
+    #taskPage, #walletPage {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>🌐 Antarjaal – Earn & Learn Platform</header>
+
+  <!-- Login Page -->
+  <div class="card" id="loginPage">
+    <h2>Login करें</h2>
+    <p>अपना Username डालें और Login करें</p>
+    <input type="text" id="username" placeholder="Username लिखें" style="padding:8px; width:80%;"><br><br>
+    <button class="btn" onclick="login()">Login</button>
+  </div>
+
+  <!-- Task Page -->
+  <div class="card" id="taskPage">
+    <h2>📌 आज के Task</h2>
+    <p>Task चुनें और पूरा करें</p>
+
+    <button class="btn" onclick="startTask('Video देखो', 30, 20)">🎥 Video Watch (30s)</button><br><br>
+    <button class="btn" onclick="startTask('Like करो', 10, 10)">👍 Like Task (10s)</button><br><br>
+    <button class="btn" onclick="startTask('Subscribe करो', 15, 15)">🔔 Subscribe Task (15s)</button><br><br>
+    <button class="btn" onclick="startTask('Comment करो', 20, 25)">💬 Comment Task (20s)</button>
+
+    <p id="timer">⏳ कोई Task Start नहीं हुआ</p>
+  </div>
+
+  <!-- Wallet Page -->
+  <div class="card" id="walletPage">
+    <h2>💰 आपका Wallet</h2>
+    <p id="walletBalance">Current Balance: ₹0</p>
+    <p>हर Task पूरा करने पर बैलेंस बढ़ेगा।</p>
+    <a href="https://t.me/yourgroup" class="btn" target="_blank">Telegram Group Join करें</a><br><br>
+    <button class="btn" onclick="backToTasks()">🔙 वापस जाएँ</button>
+  </div>
+
+  <!-- Instructions -->
+  <div class="card">
+    <h2>👉 कैसे काम करता है?</h2>
+    <p>1. Login करके Username डालें।</p>
+    <p>2. Task Page में जाकर Task चुनें।</p>
+    <p>3. Timer पूरा होने पर Task Complete होगा।</p>
+    <p>4. Reward अपने Wallet में मिलेगा।</p>
+    <p>5. Wallet Balance देखकर Telegram से Withdraw कर सकते हैं।</p>
+  </div>
+
+  <footer>© 2025 Antarjaal | All Rights Reserved</footer>
+
+  <script>
+    let balance = 0;
+    let timerInterval;
+
+    function login() {
+      const username = document.getElementById("username").value;
+      if (username.trim() === "") {
+        alert("कृपया Username डालें");
+        return;
+      }
+      document.getElementById("loginPage").style.display = "none";
+      document.getElementById("taskPage").style.display = "block";
+    }
+
+    function startTask(taskName, seconds, reward) {
+      clearInterval(timerInterval);
+      let timeLeft = seconds;
+      document.getElementById("timer").innerText = "⏳ " + taskName + " चल रहा है: " + timeLeft + "s";
+
+      timerInterval = setInterval(function() {
+        timeLeft--;
+        document.getElementById("timer").innerText = "⏳ " + taskName + " चल रहा है: " + timeLeft + "s";
+
+        if (timeLeft <= 0) {
+          clearInterval(timerInterval);
+          document.getElementById("timer").innerText = "✅ " + taskName + " Complete!";
+          addReward(reward);
+        }
+      }, 1000);
+    }
+
+    functi
+    
