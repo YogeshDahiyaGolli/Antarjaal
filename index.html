@@ -4,41 +4,27 @@
   <meta charset="UTF-8">
   <title>Antarjaal – Earn & Learn Platform</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700;400&family=Pacifico&family=Montserrat:wght@500&display=swap" rel="stylesheet">
   <style>
-    body { background: #f2f8f6; color: #212b36; font-family: 'Roboto', Arial, sans-serif; margin:0; }
-    .header-bar { background: linear-gradient(90deg, #4CAF50 60%, #319d7f 100%); color:#fff; padding: 19px 0 13px 0; font-family: 'Montserrat', Arial, sans-serif; font-weight: 700; font-size: 24px; text-align:center; letter-spacing:1px; box-shadow: 0 2px 4px #0002;}
-    .nav { display: flex; justify-content: space-around; background: #e3f8df; border-bottom:1px solid #b6e4c2;}
-    .nav button { background: none; border: none; font-size: 17px; padding: 13px 0; flex:1; color:#1c6b23; font-weight:600; cursor:pointer; transition:.2s; font-family: 'Montserrat', Arial, sans-serif;}
-    .nav button.active { border-bottom: 3px solid #4CAF50; color:#388E3C; background: #eafde6;}
+    body { background: #f2f8f6; color: #212b36; font-family: Arial, sans-serif; margin:0; }
+    .header-bar { background: linear-gradient(90deg, #4CAF50 60%, #319d7f 100%); color:#fff; padding: 19px 0 13px 0; font-weight: 700; font-size: 24px; text-align:center; letter-spacing:1px; box-shadow: 0 2px 4px #0002;}
     .card { background: #fff; margin: 33px auto 0 auto; padding: 27px 16px 20px 16px; max-width: 410px; border-radius: 15px; box-shadow: 0 2px 7px #0002;}
-    input, button.main-btn { padding: 11px; margin: 10px 0; width: 92%; border-radius: 5px; border: 1px solid #b2bdb3; font-size: 16px; font-family: 'Roboto', Arial, sans-serif;}
+    input, button.main-btn { padding: 11px; margin: 10px 0; width: 92%; border-radius: 5px; border: 1px solid #b2bdb3; font-size: 16px;}
     input[type="password"], input[type="text"]{ width:90%; }
-    button.main-btn { background: linear-gradient(90deg, #4CAF50 60%, #319d7f 100%); color: #fff; border: none; font-weight:bold; font-family: 'Montserrat', Arial, sans-serif; cursor: pointer; margin-bottom: 0; box-shadow: 0 2px 5px #0001; transition:.2s;}
+    button.main-btn { background: linear-gradient(90deg, #4CAF50 60%, #319d7f 100%); color: #fff; border: none; font-weight:bold; cursor: pointer; margin-bottom: 0; box-shadow: 0 2px 5px #0001; transition:.2s;}
     button.main-btn:hover { background: #388E3C;}
     .small-text{font-size:13px;color:#666;}
-    .link-btn { background:none; border:none; color:#1e88e5; text-decoration:underline; font-size:15px; cursor:pointer; font-family: 'Montserrat', Arial;}
-    .usernamebar { background: #eafde6; color: #1c6b23; padding: 8px 0 5px 0; font-weight: 600; font-size: 16px; text-align:center; display:none; font-family: 'Montserrat', Arial, sans-serif; letter-spacing:.5px; }
-    .logout-btn { float:right; margin:-18px 10px 0 0; background:none; border:none; color:#c03f00; font-size:15px; cursor:pointer; font-family: 'Montserrat', Arial;}
-    .avatar-choose-list {display:flex;gap:10px;margin:8px 0 10px 0;flex-wrap:wrap;}
-    .avatar-choose-list img {width:46px;height:46px;border-radius:50%;border:2px solid #dbdbdb;cursor:pointer;}
-    .avatar-choose-list img.selected {border:2.5px solid #4CAF50;}
-    .profile-avatar {width:60px;height:60px;border-radius:50%;border:2.5px solid #319d7f;margin-bottom:8px;}
-    .badge-team {display:inline-block;background:#e3f8df;color:#388E3C;font-size:13px;padding:3px 11px 3px 11px;border-radius:12px;margin-left:6px;font-weight:600;}
-    .section-title {font-size:21px;color:#319d7f;margin-bottom:7px;}
-    .task-card {background:#e4f8ff;border:2px solid #90cdf4;border-radius:14px;padding:15px 11px 9px 11px;text-align:left;margin-bottom:18px;box-shadow:0 2px 6px #15c6f31a;max-width:350px;}
-    .task-email {font-family:monospace,Arial;font-size:15px;color:#1e88e5;}
-    .task-btns {margin-top:8px;display:flex;gap:10px;}
-    .task-btns button {font-size:15px;padding:7px 12px;}
-    .reward-list{margin:12px 0 0 0; padding:0;}
-    .reward-list li{margin:4px 0 0 0;}
+    .link-btn { background:none; border:none; color:#1e88e5; text-decoration:underline; font-size:15px; cursor:pointer;}
+    .usernamebar { background: #eafde6; color: #1c6b23; padding: 8px 0 5px 0; font-weight: 600; font-size: 16px; text-align:center; display:none; letter-spacing:.5px; }
+    .logout-btn { float:right; margin:-18px 10px 0 0; background:none; border:none; color:#c03f00; font-size:15px; cursor:pointer;}
+    .nav { display: flex; justify-content: space-around; background: #e3f8df; border-bottom:1px solid #b6e4c2;}
+    .nav button { background: none; border: none; font-size: 17px; padding: 13px 0; flex:1; color:#1c6b23; font-weight:600; cursor:pointer;}
+    .nav button.active { border-bottom: 3px solid #4CAF50; color:#388E3C; background: #eafde6;}
     .admin-panel {background:#fffbe6;border:2px solid #ffe066;box-shadow:0 2px 7px #ffeab0aa;border-radius:11px;padding:18px 12px 20px 12px;max-width:440px;margin:30px auto;}
     .admin-panel h3{color:#b97e07;}
     .admin-users-table {width:98%;margin-top:8px;border-collapse:collapse;font-size:15px;}
     .admin-users-table th,.admin-users-table td{border:1px solid #eee;padding:5px 8px;text-align:left;}
     .admin-users-table th{background:#e9f5e1;}
     .admin-adj-btn {padding:2px 6px;font-size:13px;border-radius:4px;border:1px solid #c2c2c2;background:#e9f5e1;color:#319d7f;cursor:pointer;}
-    .admin-broadcast-input {width:90%;padding:7px;font-size:15px;}
     .broadcast-bar {background:#ffe066;color:#b97e07;font-weight:600;padding:9px 0;text-align:center;}
     @media (max-width:500px) {
       .card {padding:13px 2px; max-width:98vw;}
@@ -46,8 +32,6 @@
       .usernamebar { font-size: 14px;}
       .admin-panel {max-width:99vw;padding:7px;}
       .admin-users-table td,.admin-users-table th{font-size:13px;padding:3px 2px;}
-      .section-title {font-size:17px;}
-      .profile-avatar {width:44px;height:44px;}
     }
   </style>
 </head>
@@ -58,19 +42,13 @@
     <span id="usernameShow"></span>
     <button class="logout-btn" onclick="logout()" title="Logout">Logout</button>
   </div>
-  <!-- Navigation Tabs -->
   <div class="nav" id="navBar" style="display:none;">
     <button onclick="showTab('home')" id="tab-home" class="active">Home</button>
-    <button onclick="showTab('profile')" id="tab-profile">Profile</button>
-    <button onclick="showTab('tasks')" id="tab-tasks">Tasks</button>
-    <button onclick="showTab('rewards')" id="tab-rewards">Rewards</button>
-    <button onclick="showTab('wallet')" id="tab-wallet">Wallet</button>
-    <button onclick="showTab('ad')" id="tab-ad">Ad</button>
     <button onclick="showTab('admin')" id="tab-admin" style="display:none;">Admin</button>
   </div>
   <!-- LOGIN PAGE -->
   <div class="card" id="loginPage">
-    <h2 style="font-family: 'Montserrat', Arial, sans-serif; color:#319d7f;">Login करें</h2>
+    <h2 style="color:#319d7f;">Login करें</h2>
     <input id="loginUsername" type="text" placeholder="Username लिखें" maxlength="18" autocomplete="username" /><br>
     <input id="loginPassword" type="password" placeholder="Password डालें" maxlength="18" autocomplete="current-password" /><br>
     <button class="main-btn" onclick="login()">Login</button>
@@ -79,7 +57,7 @@
   </div>
   <!-- SIGN UP PAGE -->
   <div class="card" id="signUpPage" style="display:none;">
-    <h2 style="font-family: 'Montserrat', Arial, sans-serif; color:#388E3C;">Sign Up करें</h2>
+    <h2 style="color:#388E3C;">Sign Up करें</h2>
     <input id="signUpUsername" type="text" placeholder="Username चुनें" maxlength="18" autocomplete="username" /><br>
     <input id="signUpPassword" type="password" placeholder="Password चुनें" maxlength="18" autocomplete="new-password" /><br>
     <input id="signUpConfirm" type="password" placeholder="Confirm Password" maxlength="18" autocomplete="new-password" /><br>
@@ -89,83 +67,8 @@
   </div>
   <!-- HOME PAGE -->
   <div class="card" id="homePage" style="display:none;">
-    <h2 style="font-family: 'Montserrat', Arial, sans-serif; color:#319d7f;">Welcome to Antarjaal 🚀</h2>
-    <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=facearea&w=400&h=400" alt="Banner" style="width:100%;max-width:320px;border-radius:18px;margin-bottom:14px;">
-    <div style="font-size:15.5px;">Earn daily rewards by completing tasks, inviting friends, and promoting ads!</div>
-    <div style="margin-top:18px;font-size:17px;color:#4CAF50;">
-      <b>Platform Stats</b><br>
-      Users: <span id="statUsers">0</span> |
-      Total Rewards: ₹<span id="statRewards">0</span>
-    </div>
-    <div style="margin-top:20px;font-size:15px;color:#319d7f;padding:8px 0;">
-      🏆 Last Winner: <span id="statWinner">-</span>
-    </div>
-  </div>
-  <!-- PROFILE PAGE -->
-  <div class="card" id="profilePage" style="display:none;">
-    <div style="text-align:center;">
-      <img id="profileAvatar" class="profile-avatar" src="" alt="Avatar">
-      <div style="font-weight:600;font-size:18px;color:#319d7f;" id="profileName"></div>
-      <div id="profileTeam" class="badge-team"></div>
-      <div style="font-size:14px;margin-top:7px;color:#888;"><span id="profileEmail"></span></div>
-      <div style="font-size:15px;margin-top:9px;">
-        Total Rewards: ₹<b id="profileRewards">0</b>
-      </div>
-      <div style="font-size:14px;color:#666;margin-top:3px;">
-        Joined: <span id="profileJoinDate"></span>
-      </div>
-    </div>
-    <hr style="margin:15px 0 8px 0;">
-    <div>
-      <b>Choose Avatar:</b>
-      <div class="avatar-choose-list" id="avatarChooser"></div>
-    </div>
-    <div style="margin-top:13px;">
-      <b>Change Team:</b>
-      <select id="profileTeamSelect" style="width:90%;padding:6px 5px;font-size:15px;" onchange="profileChangeTeam()">
-        <option value="A">Team A</option>
-        <option value="B">Team B</option>
-        <option value="C">Team C</option>
-      </select>
-    </div>
-  </div>
-  <!-- TASKS PAGE -->
-  <div class="card" id="tasksPage" style="display:none;">
-    <div class="section-title">Tasks (Email Based)</div>
-    <div id="taskList"></div>
-  </div>
-  <!-- REWARDS PAGE -->
-  <div class="card" id="rewardsPage" style="display:none;">
-    <div class="section-title">Rewards & Teams</div>
-    <div style="font-size:15px;margin-bottom:8px;">Your Rewards:</div>
-    <ul class="reward-list" id="rewardList"></ul>
-    <div style="margin-top:18px;">
-      <b>Team:</b> <span id="rewardTeam"></span>
-      <br>
-      <b>Team Rewards:</b> ₹<span id="rewardTeamAmt">0</span>
-    </div>
-  </div>
-  <!-- WALLET PAGE -->
-  <div class="card" id="walletPage" style="display:none;">
-    <div class="section-title">Wallet</div>
-    <div style="font-size:19px; margin:10px 0;">Current Balance: ₹<span id="walletBalance">0</span></div>
-    <div class="small-text">Withdraw via Telegram Group</div>
-    <div style="margin-top:18px;">
-      <b>Reward History:</b>
-      <ul class="reward-list" id="walletRewardList"></ul>
-    </div>
-  </div>
-  <!-- AD PAGE -->
-  <div class="card" id="adPage" style="display:none;">
-    <div class="section-title">Sponsored Ad</div>
-    <div class="task-card" style="text-align:center;">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Paytm_logo.png" alt="Ad" style="width:55px;border-radius:13px;margin-bottom:8px;">
-      <div style="font-size:17px;color:#319d7f;">Paytm Recharge Offer</div>
-      <div style="font-size:15px;color:#246a83;">अब करे Paytm से Recharge और पाए 3% Cashback!  
-        Offer सिर्फ Antarjaal users के लिए।</div>
-      <a href="https://paytm.com/" target="_blank" class="main-btn" style="width:auto;display:inline-block;margin-top:8px;">Recharge Now</a>
-    </div>
-    <div style="margin-top:22px;font-family:Pacifico,cursive;color:#d77b09;font-size:19px;">Want to promote your brand? <a href="mailto:yourmail@example.com" style="color:#1e88e5;text-decoration:underline;">Contact Us</a></div>
+    <h2 style="color:#319d7f;">Welcome to Antarjaal 🚀</h2>
+    <div style="font-size:15.5px;">Earn daily rewards by completing tasks!</div>
   </div>
   <!-- ADMIN PANEL -->
   <div class="admin-panel" id="adminPanel" style="display:none;">
@@ -181,52 +84,14 @@
       <b>All Users:</b>
       <table class="admin-users-table" id="adminUsersTable">
         <thead>
-          <tr><th>#</th><th>Avatar</th><th>Username</th><th>Team</th><th>Rewards</th><th>Joined</th><th>Adjust</th></tr>
+          <tr><th>#</th><th>Username</th></tr>
         </thead>
         <tbody></tbody>
       </table>
     </div>
-    <div style="font-size:13px;color:#777;margin-top:7px;">(Only for admin@123, static demo)</div>
   </div>
   <footer>© 2025 Antarjaal | All Rights Reserved</footer>
   <script>
-    // Avatars (cartoon/emoji)
-    const AVATARS = [
-      "https://avatars.dicebear.com/api/bottts/1.svg",
-      "https://avatars.dicebear.com/api/bottts/2.svg",
-      "https://avatars.dicebear.com/api/bottts/3.svg",
-      "https://avatars.dicebear.com/api/bottts/4.svg",
-      "https://avatars.dicebear.com/api/bottts/5.svg",
-      "https://avatars.dicebear.com/api/bottts/6.svg",
-      "https://avatars.dicebear.com/api/bottts/7.svg",
-      "https://avatars.dicebear.com/api/avataaars/8.svg",
-      "https://avatars.dicebear.com/api/avataaars/9.svg",
-      "https://avatars.dicebear.com/api/avataaars/10.svg",
-      "https://avatars.dicebear.com/api/adventurer/11.svg",
-      "https://avatars.dicebear.com/api/adventurer/12.svg"
-    ];
-    // Demo tasks
-    const TASKS = [
-      {
-        name: "Subscribe Channel",
-        email: "antarjaalteam1@gmail.com",
-        link: "https://www.youtube.com/",
-        reward: 8
-      },
-      {
-        name: "Like Video",
-        email: "antarjaalteam2@gmail.com",
-        link: "https://www.youtube.com/",
-        reward: 5
-      },
-      {
-        name: "Watch Video",
-        email: "antarjaalteam3@gmail.com",
-        link: "https://www.youtube.com/",
-        reward: 10
-      }
-    ];
-    // --------- Local Storage User Management ---------
     function getUsers() {
       return JSON.parse(localStorage.getItem('antarjaalUsers') || '{}');
     }
@@ -239,7 +104,6 @@
     function setLoggedInUser(username) {
       localStorage.setItem('antarjaalLoggedInUser', username);
     }
-    // --------- Sign Up / Login ---------
     function showSignUp() {
       document.getElementById('loginPage').style.display = "none";
       document.getElementById('signUpPage').style.display = "";
@@ -272,9 +136,7 @@
         error.innerText = "Username पहले से मौजूद है!";
         return;
       }
-      let joinDate = new Date().toLocaleDateString();
-      let avatar = AVATARS[Math.floor(Math.random()*AVATARS.length)];
-      users[username] = {password: pass, avatar, team: "A", rewards:0, rewardList:[], joined: joinDate, email:"", lastWin: false};
+      users[username] = {password: pass};
       setUsers(users);
       setLoggedInUser(username);
       afterLogin(username);
@@ -284,6 +146,11 @@
       let pass = document.getElementById('loginPassword').value;
       let error = document.getElementById('loginError');
       error.innerText = "";
+      if(username==="admin" && pass==="admin@123") {
+        setLoggedInUser(username);
+        afterLogin(username);
+        return;
+      }
       let users = getUsers();
       if(!users[username]) {
         error.innerText = "User नहीं मिला! Sign Up करें।";
@@ -303,8 +170,6 @@
       document.getElementById('usernamebar').style.display = "block";
       document.getElementById('usernameShow').innerText = username;
       showTab('home');
-      showBroadcast();
-      renderStats();
       if(username==="admin") document.getElementById("tab-admin").style.display = "block";
     }
     function logout() {
@@ -314,9 +179,8 @@
       document.getElementById("tab-admin").style.display = "none";
       showLogin();
     }
-    // ------------- Tabs -----------
     function showTab(tab) {
-      let tabs = ["home","profile","tasks","rewards","wallet","ad","admin"];
+      let tabs = ["home","admin"];
       tabs.forEach(t=>{
         let el = document.getElementById(t+"Page") || document.getElementById("adminPanel");
         if(el) el.style.display = "none";
@@ -332,61 +196,41 @@
       }
       document.getElementById(tab+"Page").style.display = "block";
       document.getElementById("tab-"+tab).classList.add("active");
-      // update page data
-      if(tab==="profile") renderProfile();
-      if(tab==="tasks") renderTasks();
-      if(tab==="rewards") renderRewards();
-      if(tab==="wallet") renderWallet();
-      if(tab==="home") renderStats();
     }
-    // ----------- Profile ---------
-    function renderProfile() {
+    function renderAdminPanel() {
       let users = getUsers();
-      let u = users[getLoggedInUser()];
-      document.getElementById("profileAvatar").src = u.avatar || AVATARS[0];
-      document.getElementById("profileName").innerText = getLoggedInUser();
-      document.getElementById("profileTeam").innerText = "Team " + (u.team||"A");
-      document.getElementById("profileEmail").innerText = u.email ? u.email : "";
-      document.getElementById("profileRewards").innerText = u.rewards||0;
-      document.getElementById("profileJoinDate").innerText = u.joined||"-";
-      document.getElementById("profileTeamSelect").value = u.team||"A";
-      // Avatar chooser
-      let avc = document.getElementById("avatarChooser");
-      avc.innerHTML = "";
-      AVATARS.forEach((a,i)=>{
-        let im = document.createElement("img");
-        im.src = a;
-        im.className = (u.avatar===a)?"selected":"";
-        im.onclick = ()=>{profileSetAvatar(a)};
-        avc.appendChild(im);
-      });
+      let tbody = document.getElementById("adminUsersTable").querySelector("tbody");
+      tbody.innerHTML = "";
+      let idx = 1;
+      for(let k in users){
+        tbody.innerHTML += `<tr><td>${idx++}</td><td>${k}</td></tr>`;
+      }
     }
-    function profileSetAvatar(a) {
-      let users = getUsers();
-      let u = users[getLoggedInUser()];
-      u.avatar = a;
-      setUsers(users);
-      renderProfile();
+    function adminBroadcastMsg() {
+      let val = document.getElementById("adminBroadcastInput").value.trim();
+      if(val.length) localStorage.setItem("antarjaalBroadcast",val);
+      showBroadcast();
+      document.getElementById("adminBroadcastInput").value="";
     }
-    function profileChangeTeam() {
-      let users = getUsers();
-      let u = users[getLoggedInUser()];
-      let val = document.getElementById("profileTeamSelect").value;
-      u.team = val;
-      setUsers(users);
-      renderProfile();
+    function adminClearBroadcast() {
+      localStorage.removeItem("antarjaalBroadcast");
+      showBroadcast();
     }
-    // ----------- Tasks ----------
-    function renderTasks() {
-      let u = getUsers()[getLoggedInUser()];
-      let doneTasks = (u && u.doneTasks) ? u.doneTasks : [];
-      let div = document.getElementById("taskList");
-      div.innerHTML = "";
-      TASKS.forEach((t,idx)=>{
-        let done = doneTasks.includes(idx);
-        div.innerHTML += `
-          <div class="task-card">
-            <div><b>${t.name}</b></div>
-            <div>Email: <span class="task-email">${t.email}</span></div>
-            <div class="task-btns">
-              <button class="main-btn" style="width:auto;padding:4px 12px" onclick=
+    function showBroadcast() {
+      let msg = localStorage.getItem("antarjaalBroadcast")||"";
+      let bar = document.getElementById("broadcastBar");
+      bar.style.display = msg?"block":"none";
+      bar.innerText = msg;
+    }
+    window.onload = function() {
+      let logged = getLoggedInUser();
+      if(logged && (logged==="admin" || getUsers()[logged])) {
+        afterLogin(logged);
+      } else {
+        showLogin();
+      }
+      showBroadcast();
+    };
+  </script>
+</body>
+</html>
